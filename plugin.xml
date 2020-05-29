@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-freshchat2" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Freshchat2</name>
+    <author>Victor Rosano - DualH</author>
+
+    <js-module name="Freshchat2" src="www/Freshchat2.js">
+        <clobbers target="cordova.plugins.Freshchat2" />
+    </js-module>
+
+    <engines>
+        <engine name="cordova-ios" version=">=5.1.1" />
+    </engines>
+    
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="Freshchat2">
+                <param name="ios-package" value="Freshchat2" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <!-- Permission to access for differents features -->
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <array>
+                <string>To Enable access to Photo Library</string>
+            </array>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <array>
+                <string>To take Images from Camera</string>
+            </array>
+        </config-file>
+        
+        <source-file src="src/ios/Freshchat2.m" />
+
+        <!-- Addition of frameworks required for drag and drop are -->
+        <framework src="Foundation.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="AudioToolbox.framework"/>
+        <framework src="CoreMedia.framework"/>
+        <framework src="CoreData.framework"/>
+        <framework src="ImageIO.framework"/>
+        <framework src="Photos.framework"/>
+        <framework src="SystemConfiguration.framework"/>
+        <framework src="Security.framework"/>
+        <!-- Addition of frameworks required for drag and drop are -->
+
+        <podspec>
+            <config>
+                <source url="https://github.com/CocoaPods/Specs.git"/>
+            </config>
+
+            <pods>
+                <pod name="FreshchatSDK" spec="3.6.0" />
+            </pods>
+        </podspec>
+    </platform>
+</plugin>

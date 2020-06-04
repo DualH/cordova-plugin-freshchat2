@@ -34,6 +34,8 @@ This plugin integrates Freshchat's SDK into a Ionic/Cordova project.
   - [unreadCount](#unreadcount)
   - [showFAQs](#showfaqs)
   - [sendMessage](#sendmessage)
+- [Todos](#todos)
+- [Copyright ©](#copyright-%C2%A9)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
